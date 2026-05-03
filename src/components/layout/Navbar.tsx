@@ -75,15 +75,19 @@ function Navbar() {
         {isOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
 
-      {isOpen && (
+        {isOpen && (
         <nav className={`mobile-menu ${isClosing ? "closing" : ""}`}>
-          {navItems.map((item) => (
-            <button key={item.href} onClick={() => scrollToSection(item.href)}>
-              {item.label}
+            {navItems.map((item) => (
+            <button
+                className="mobile-menu-item"
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+            >
+                {item.label}
             </button>
-          ))}
+            ))}
         </nav>
-      )}
+        )}
     </header>
   );
 }

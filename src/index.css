@@ -146,7 +146,29 @@ button {
   transform-origin: top right;
 }
 
-.mobile-menu button {
+.mobile-menu-button {
+  display: none;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--card-border);
+  outline: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  cursor: pointer;
+  border-radius: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-item {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -163,7 +185,7 @@ button {
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.mobile-menu button:hover {
+.mobile-menu-item:hover {
   background: rgba(255, 255, 255, 0.07);
   color: var(--text);
   transform: translateX(2px);
@@ -173,11 +195,6 @@ button {
   animation: mobileMenuOut 0.22s ease forwards;
 }
 
-
-.mobile-menu button:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text);
-}
 
 .mobile-menu.closing {
   animation: mobileMenuOut 0.22s ease forwards;
@@ -1213,5 +1230,15 @@ button {
   to {
     opacity: 0;
     transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-menu-button {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
   }
 }
