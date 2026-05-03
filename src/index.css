@@ -22,6 +22,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+}
+
+section {
+  scroll-margin-top: 130px;
 }
 
 body {
@@ -1123,32 +1128,39 @@ button {
     padding: 72px 0;
   }
 
+  .navbar {
+    top: 10px;
+    width: min(100% - 22px, var(--max-width));
+    padding: 10px 12px;
+  }
+
   .hero {
     gap: 34px;
-    padding-top: 120px;
+    padding-top: 150px;
     min-height: auto;
   }
 
   .hero-badge {
-  font-size: 0.78rem;
-  padding: 8px 12px;
-  margin-bottom: 18px;
+    font-size: 0.78rem;
+    padding: 8px 12px;
+    margin-bottom: 18px;
   }
 
   .hero h1 {
-  font-size: 2.45rem;
-  line-height: 0.98;
-  letter-spacing: -0.06em;
+    font-size: 2.35rem;
+    line-height: 1;
+    letter-spacing: -0.06em;
   }
 
   .hero p {
-  font-size: 0.98rem;
-  line-height: 1.7;
-  margin-top: 20px;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-top: 20px;
   }
 
   .hero-actions {
     margin-top: 28px;
+    flex-direction: column;
   }
 
   .primary-button,
@@ -1157,79 +1169,96 @@ button {
     width: 100%;
   }
 
+  .hero-socials {
+    margin-top: 22px;
+  }
+
   .hero-visual {
-  min-height: auto;
-  padding-bottom: 20px;
+    min-height: 360px;
+    padding-bottom: 18px;
   }
 
   .hero-card {
-  width: min(320px, 100%);
-  border-radius: 28px;
+    width: min(300px, 100%);
+    border-radius: 28px;
   }
 
   .hero-card img {
-  border-radius: 20px;
+    border-radius: 20px;
   }
 
   .floating-card {
-    display: none;
-  }
+  display: block;
+  padding: 11px 13px;
+  border-radius: 16px;
+}
+
+.floating-card strong {
+  font-size: 0.78rem;
+}
+
+.floating-card span {
+  font-size: 0.72rem;
+}
+
+.floating-card-top {
+  top: 18px;
+  left: 4px;
+}
+
+.floating-card-bottom {
+  right: 4px;
+  bottom: 18px;
+}
 
   .experience-header {
     flex-direction: column;
   }
-  
+
   .experience-timeline::before {
-  left: 18px;
-}
+    left: 18px;
+  }
 
-.experience-timeline-item {
-  grid-template-columns: 38px 1fr;
-  gap: 14px;
-}
+  .experience-timeline-item {
+    grid-template-columns: 38px 1fr;
+    gap: 14px;
+  }
 
-.experience-marker {
-  width: 38px;
-  height: 38px;
-}
+  .experience-marker {
+    width: 38px;
+    height: 38px;
+  }
 
-.experience-card {
-  padding: 22px;
-}
+  .experience-card {
+    padding: 22px;
+  }
 
-.contact-main-card {
-  padding: 26px;
-}
+  .contact-main-card {
+    padding: 26px;
+  }
 
-.contact-link-card {
-  grid-template-columns: 46px 1fr;
-  min-height: auto;
-  padding: 18px;
-}
+  .contact-link-card {
+    grid-template-columns: 46px 1fr;
+    min-height: auto;
+    padding: 18px;
+  }
 
-.contact-link-icon {
-  width: 46px;
-  height: 46px;
-}
+  .contact-link-icon {
+    width: 46px;
+    height: 46px;
+  }
 
-.contact-link-arrow {
-  display: none;
-}
+  .contact-link-arrow {
+    display: none;
+  }
 
-.footer {
-  flex-direction: column;
-}
+  .footer {
+    flex-direction: column;
+  }
 
-.footer-right {
-  justify-items: start;
-}
-
-.navbar {
-  top: 10px;
-  width: min(100% - 22px, var(--max-width));
-  padding: 10px 12px;
-}
-
+  .footer-right {
+    justify-items: start;
+  }
 }
 
 @keyframes mobileMenuIn {
