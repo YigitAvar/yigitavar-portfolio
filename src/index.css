@@ -1124,20 +1124,31 @@ button {
   }
 
   .hero {
-    gap: 28px;
-    padding-top: 110px;
+    gap: 34px;
+    padding-top: 120px;
+    min-height: auto;
+  }
+
+  .hero-badge {
+  font-size: 0.78rem;
+  padding: 8px 12px;
+  margin-bottom: 18px;
   }
 
   .hero h1 {
-    font-size: 2.65rem;
+  font-size: 2.45rem;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
   }
 
   .hero p {
-    font-size: 1rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-top: 20px;
   }
 
   .hero-actions {
-    flex-direction: column;
+    margin-top: 28px;
   }
 
   .primary-button,
@@ -1147,7 +1158,17 @@ button {
   }
 
   .hero-visual {
-    min-height: 360px;
+  min-height: auto;
+  padding-bottom: 20px;
+  }
+
+  .hero-card {
+  width: min(320px, 100%);
+  border-radius: 28px;
+  }
+
+  .hero-card img {
+  border-radius: 20px;
   }
 
   .floating-card {
