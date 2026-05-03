@@ -2,48 +2,85 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "about" },
+  { label: "Skills", href: "skills" },
+  { label: "Projects", href: "projects" },
+  { label: "Experience", href: "experience" },
+  { label: "Contact", href: "contact" },
 ];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+
+    if (!section) return;
+
+    const navbarOffset = 110;
+    const sectionPosition =
+      section.getBoundingClientRect().top + window.scrollY - navbarOffset;
+
+    window.scrollTo({
+      top: sectionPosition,
+      behavior: "smooth",
+    });
+
+    setIsClosing(true);
+
+    window.setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 220);
+  };
 
   return (
     <header className="navbar">
-      <a href="#" className="navbar-logo">
+      <button
+        className="navbar-logo"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Go to top"
+      >
         Yiğit<span>Avar</span>
-      </a>
+      </button>
 
       <nav className="navbar-links">
         {navItems.map((item) => (
-          <a key={item.href} href={item.href}>
+          <button key={item.href} onClick={() => scrollToSection(item.href)}>
             {item.label}
-          </a>
+          </button>
         ))}
       </nav>
 
-      <a className="navbar-cta" href="#contact">
+      <button className="navbar-cta" onClick={() => scrollToSection("contact")}>
         Let&apos;s Connect
-      </a>
+      </button>
 
       <button
         className="mobile-menu-button"
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={() => {
+          if (isOpen) {
+            setIsClosing(true);
+            window.setTimeout(() => {
+              setIsOpen(false);
+              setIsClosing(false);
+            }, 220);
+          } else {
+            setIsOpen(true);
+          }
+        }}
         aria-label="Toggle menu"
       >
         {isOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
 
       {isOpen && (
-        <nav className="mobile-menu">
+        <nav className={`mobile-menu ${isClosing ? "closing" : ""}`}>
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
+            <button key={item.href} onClick={() => scrollToSection(item.href)}>
               {item.label}
-            </a>
+            </button>
           ))}
         </nav>
       )}
