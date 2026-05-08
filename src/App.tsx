@@ -1,28 +1,29 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Skills from "./components/sections/Skills";
-import Projects from "./components/sections/Projects";
-import Experience from "./components/sections/Experience";
-import Contact from "./components/sections/Contact";
+import Home from "./pages/Home";
+import Lab from "./pages/Lab";
+import CalendarDemo from "./pages/CalendarDemo";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
+    <BrowserRouter>
+      <div className="app">
+        <Navbar />
 
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/lab" element={<Lab />} />
+            <Route path="/lab/calendar" element={<CalendarDemo />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
