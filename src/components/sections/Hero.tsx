@@ -45,7 +45,7 @@ function Hero() {
             <a href="https://github.com/YigitAvar" target="_blank" rel="noreferrer" aria-label="GitHub">
                 <FaGithub size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/yigit-avar" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/yiğit-avar-567a38299" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <FaLinkedinIn size={20} />
             </a>
             <a href="mailto:yigitavar@hotmail.com" aria-label="Email">
