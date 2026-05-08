@@ -12,7 +12,7 @@ const contactLinks = [
   {
     label: "LinkedIn",
     value: "linkedin.com/in/yigit-avar",
-    href: "https://www.linkedin.com/in/yigit-avar",
+    href: "https://www.linkedin.com/in/yiğit-avar-567a38299",
     icon: <FaLinkedinIn size={20} />,
   },
   {
