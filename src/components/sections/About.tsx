@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { Database, ServerCog, Code2 } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
+import { fadeInUp, viewportOnce } from "../../lib/motion";
 
 const aboutCards = [
   {
@@ -24,7 +26,14 @@ const aboutCards = [
 
 function About() {
   return (
-    <section id="about" className="section-container about-section">
+    <motion.section
+      id="about"
+      className="section-container about-section"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <SectionTitle
         eyebrow="About"
         title="A practical engineering profile shaped by software and infrastructure."
@@ -55,7 +64,7 @@ function About() {
           </article>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

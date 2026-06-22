@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
 import { Award, Code2, Database, MonitorCog, ServerCog, Wrench } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
 import SkillBadge from "../ui/SkillBadge";
 import { skills } from "../../data/skills";
+import { fadeInUp, viewportOnce } from "../../lib/motion";
 
 const skillIcons = [ServerCog, Database, Code2, MonitorCog, Wrench];
 
@@ -13,7 +15,14 @@ const certificates = [
 
 function Skills() {
   return (
-    <section id="skills" className="section-container">
+    <motion.section
+      id="skills"
+      className="section-container"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <SectionTitle
         eyebrow="Skills"
         title="A practical technical stack for software and infrastructure work."
@@ -70,7 +79,13 @@ function Skills() {
         </div>
       </div>
 
-      <div className="certificates">
+      <motion.div
+        className="certificates"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <h3 className="certificates-title">Certificates</h3>
 
         <div className="certificates-list">
@@ -86,8 +101,8 @@ function Skills() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
 

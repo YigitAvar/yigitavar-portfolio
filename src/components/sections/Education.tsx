@@ -1,9 +1,18 @@
+import { motion } from "framer-motion";
 import { GraduationCap, MapPin } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
+import { fadeInUp, viewportOnce } from "../../lib/motion";
 
 function Education() {
   return (
-    <section id="education" className="section-container">
+    <motion.section
+      id="education"
+      className="section-container"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <SectionTitle eyebrow="Education" title="Academic background." />
 
       <div className="education-card">
@@ -22,7 +31,7 @@ function Education() {
           </span>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

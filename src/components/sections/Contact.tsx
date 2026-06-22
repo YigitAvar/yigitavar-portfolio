@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import { Mail, Send, ArrowRight } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import SectionTitle from "../ui/SectionTitle";
+import { fadeInUp, viewportOnce } from "../../lib/motion";
 
 const contactLinks = [
   {
@@ -25,7 +27,14 @@ const contactLinks = [
 
 function Contact() {
   return (
-    <section id="contact" className="section-container contact-section">
+    <motion.section
+      id="contact"
+      className="section-container contact-section"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <SectionTitle
         eyebrow="Contact"
         title="Let’s build something practical."
@@ -74,7 +83,7 @@ function Contact() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

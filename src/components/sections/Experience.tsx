@@ -1,10 +1,19 @@
+import { motion } from "framer-motion";
 import { BriefcaseBusiness, MapPin } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
 import { experiences } from "../../data/experience";
+import { fadeInUp, viewportOnce } from "../../lib/motion";
 
 function Experience() {
   return (
-    <section id="experience" className="section-container">
+    <motion.section
+      id="experience"
+      className="section-container"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <SectionTitle
         eyebrow="Experience"
         title="Practical experience across IT operations and software development."
@@ -56,7 +65,7 @@ function Experience() {
           </article>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

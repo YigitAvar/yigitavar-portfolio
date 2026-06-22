@@ -867,6 +867,12 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.22s ease, border 0.22s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(96, 165, 250, 0.34);
 }
 
 .education-icon {
@@ -928,6 +934,12 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.22s ease, border 0.22s ease;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(96, 165, 250, 0.34);
 }
 
 .certificate-icon {
@@ -1434,7 +1446,9 @@ button {
   }
 
   .hero-badge {
+    max-width: 100%;
     font-size: 0.78rem;
+    line-height: 1.5;
     padding: 8px 12px;
     margin-bottom: 18px;
   }
@@ -1443,6 +1457,16 @@ button {
     font-size: 2.35rem;
     line-height: 1;
     letter-spacing: -0.06em;
+    overflow-wrap: break-word;
+  }
+
+  .experience-period {
+    flex-wrap: wrap;
+  }
+
+  .education-meta {
+    flex-wrap: wrap;
+    gap: 8px 14px;
   }
 
   .hero p {
@@ -1594,5 +1618,17 @@ button {
 
   .mobile-menu {
     display: none !important;
+  }
+}
+
+/* Respect users who ask the OS to reduce motion (vestibular comfort, a11y). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

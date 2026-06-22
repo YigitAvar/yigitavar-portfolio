@@ -1,10 +1,19 @@
+import { motion } from "framer-motion";
 import SectionTitle from "../ui/SectionTitle";
 import ProjectCard from "../ui/ProjectCard";
 import { projects } from "../../data/projects";
+import { fadeInUp, viewportOnce } from "../../lib/motion";
 
 function Projects() {
   return (
-    <section id="projects" className="section-container">
+    <motion.section
+      id="projects"
+      className="section-container"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <SectionTitle
         eyebrow="Projects"
         title="Selected projects with real technical direction."
@@ -16,7 +25,7 @@ function Projects() {
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

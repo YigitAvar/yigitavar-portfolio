@@ -27,6 +27,12 @@ function Navbar() {
     }, 220);
   };
 
+  const prefersReducedMotion = () =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const scrollBehavior = (): ScrollBehavior =>
+    prefersReducedMotion() ? "auto" : "smooth";
+
   const scrollToSection = (sectionId: string) => {
     const goToSection = () => {
       const section = document.getElementById(sectionId);
@@ -39,7 +45,7 @@ function Navbar() {
 
       window.scrollTo({
         top: sectionPosition,
-        behavior: "smooth",
+        behavior: scrollBehavior(),
       });
     };
 
@@ -62,7 +68,7 @@ function Navbar() {
     if (location.pathname !== "/") {
       navigate("/");
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: scrollBehavior() });
     }
 
     if (isOpen) {
@@ -72,7 +78,7 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <button className="navbar-logo" onClick={goHome} aria-label="Go to homepage">
+      <button className="navbar-logo" onClick={goHome} aria-label="Yiğit Avar, go to homepage">
         Yiğit<span>Avar</span>
       </button>
 
