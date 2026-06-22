@@ -1,5 +1,5 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
@@ -33,36 +33,62 @@ function Navbar() {
   const scrollBehavior = (): ScrollBehavior =>
     prefersReducedMotion() ? "auto" : "smooth";
 
+  const scrollToId = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+
+    if (!section) return false;
+
+    const navbarOffset = 110;
+    const sectionPosition =
+      section.getBoundingClientRect().top + window.scrollY - navbarOffset;
+
+    window.scrollTo({
+      top: sectionPosition,
+      behavior: scrollBehavior(),
+    });
+
+    return true;
+  };
+
   const scrollToSection = (sectionId: string) => {
-    const goToSection = () => {
-      const section = document.getElementById(sectionId);
-
-      if (!section) return;
-
-      const navbarOffset = 110;
-      const sectionPosition =
-        section.getBoundingClientRect().top + window.scrollY - navbarOffset;
-
-      window.scrollTo({
-        top: sectionPosition,
-        behavior: scrollBehavior(),
-      });
-    };
-
     if (location.pathname !== "/") {
-      navigate("/");
-
-      window.setTimeout(() => {
-        goToSection();
-      }, 120);
+      // Navigate home first, then let the effect below scroll once the
+      // target section has actually mounted (page transition takes time).
+      navigate("/", { state: { scrollTo: sectionId } });
     } else {
-      goToSection();
+      scrollToId(sectionId);
     }
 
     if (isOpen) {
       closeMobileMenu();
     }
   };
+
+  // After a cross-page navigation, wait until the requested section exists in
+  // the DOM (route transition + mount) and then scroll to it.
+  useEffect(() => {
+    const target = (location.state as { scrollTo?: string } | null)?.scrollTo;
+
+    if (location.pathname !== "/" || !target) return;
+
+    let frame = 0;
+    let attempts = 0;
+
+    const tryScroll = () => {
+      if (scrollToId(target) || attempts > 90) {
+        navigate("/", { replace: true, state: null });
+        return;
+      }
+
+      attempts += 1;
+      frame = requestAnimationFrame(tryScroll);
+    };
+
+    frame = requestAnimationFrame(tryScroll);
+
+    return () => cancelAnimationFrame(frame);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
 
   const goHome = () => {
     if (location.pathname !== "/") {
