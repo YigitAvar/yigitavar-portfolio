@@ -12,7 +12,7 @@ export const labItems: LabItem[] = [
     description:
       "A reservation-oriented calendar experiment designed for table-based booking workflows and timeline views.",
     status: "In Progress",
-    path: "/lab/calendar",
+    path: "#",
     tags: ["React", "Calendar", "Reservations", "UI Experiment"],
   },
   {

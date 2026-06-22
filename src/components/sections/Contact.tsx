@@ -29,7 +29,7 @@ function Contact() {
       <SectionTitle
         eyebrow="Contact"
         title="Let’s build something practical."
-        description="I am open to internship, junior developer, full-stack development, and IT infrastructure opportunities."
+        description="I am looking for full-time opportunities in enterprise IT infrastructure and system administration."
       />
 
       <div className="contact-panel">
@@ -41,9 +41,10 @@ function Contact() {
           <h3>Have an opportunity or project in mind?</h3>
 
           <p>
-            I am especially interested in software projects that combine backend
-            systems, databases, infrastructure awareness, automation, and real
-            operational needs.
+            My main focus is enterprise IT infrastructure and system administration —
+            daily operations, Active Directory, Microsoft 365, and endpoint management.
+            I also bring backend development and automation experience that adds value
+            on the operational side.
           </p>
 
           <a href="mailto:yigitavar@hotmail.com" className="contact-primary-link">

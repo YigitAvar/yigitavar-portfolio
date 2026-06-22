@@ -4,14 +4,16 @@ export type ExperienceItem = {
   period: string;
   location: string;
   description: string[];
+  current?: boolean;
 };
 
 export const experiences: ExperienceItem[] = [
   {
     role: "IT Intern",
     company: "Gen Era Diagnostics",
-    period: "Jun. 2025 – Jul. 2025 | Oct. 2025 – Present",
+    period: "Jun 2025 – Jul 2025 | Oct 2025 – Present",
     location: "Istanbul, Turkey",
+    current: true,
     description: [
       "Performed daily IT operations including user account management, endpoint preparation, Office 365 administration, domain joining, and internal support requests.",
       "Managed user accounts, password resets, group-related tasks, and device operations in Active Directory and Office 365.",

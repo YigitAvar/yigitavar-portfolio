@@ -1,9 +1,15 @@
-import { Code2, Database, MonitorCog, ServerCog, Wrench } from "lucide-react";
+import { Award, Code2, Database, MonitorCog, ServerCog, Wrench } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
 import SkillBadge from "../ui/SkillBadge";
 import { skills } from "../../data/skills";
 
 const skillIcons = [ServerCog, Database, Code2, MonitorCog, Wrench];
+
+const certificates = [
+  { title: "AI & ML Algorithms", issuer: "Microsoft" },
+  { title: "Deep Learning", issuer: "Illinois Tech" },
+  { title: "Project Management Internship", issuer: "TNC Group" },
+];
 
 function Skills() {
   return (
@@ -61,6 +67,24 @@ function Skills() {
               </article>
             );
           })}
+        </div>
+      </div>
+
+      <div className="certificates">
+        <h3 className="certificates-title">Certificates</h3>
+
+        <div className="certificates-list">
+          {certificates.map((cert) => (
+            <div className="certificate-item" key={cert.title}>
+              <span className="certificate-icon">
+                <Award size={16} />
+              </span>
+              <span className="certificate-text">
+                {cert.title}
+                <span className="certificate-issuer">{cert.issuer}</span>
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

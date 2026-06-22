@@ -20,7 +20,16 @@ function Experience() {
 
             <div className="experience-card">
               <div className="experience-topline">
-                <span className="experience-period">{item.period}</span>
+                <span className="experience-period">
+                  {item.current && item.period.endsWith("Present") ? (
+                    <>
+                      {item.period.slice(0, -"Present".length)}
+                      <span className="experience-present">Present</span>
+                    </>
+                  ) : (
+                    item.period
+                  )}
+                </span>
                 <span className="experience-location">
                   <MapPin size={14} />
                   {item.location}

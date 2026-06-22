@@ -13,17 +13,18 @@ function Hero() {
           transition={{ duration: 0.7 }}
         >
           <span className="hero-badge">
-            Computer Engineering · IT Infrastructure · Full-Stack
+            Enterprise IT · Active Directory & O365 · Full-Stack
           </span>
 
             <h1>
-            I build full-stack software systems with real infrastructure experience.
+            I keep enterprise IT infrastructure running and build the software around it.
             </h1>
 
             <p>
-            Final-year Computer Engineering student focused on enterprise IT, backend
-            development, database-backed systems, and modern web applications. I combine
-            hands-on infrastructure operations with practical software engineering projects.
+            Computer Engineering graduate with hands-on experience in enterprise IT
+            infrastructure — Active Directory, Office 365, endpoint preparation, and domain
+            operations — combined with backend development, automation, and reporting. New to
+            the field, but already active on the ground.
             </p>
 
             <div className="hero-actions">

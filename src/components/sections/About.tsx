@@ -34,15 +34,15 @@ function About() {
       <div className="about-highlight">
         <div>
           <span className="about-kicker">Current Direction</span>
-          <h3>Full-stack development with strong infrastructure awareness.</h3>
+          <h3>Enterprise IT infrastructure, backed by hands-on development.</h3>
         </div>
 
         <p>
-          I am a final-year Computer Engineering student focused on modern web
-          applications, backend development, enterprise IT infrastructure, and
-          database-backed systems. My practical experience includes daily IT
-          operations, Microsoft 365 administration, Active Directory workflows,
-          endpoint preparation, and applied software projects.
+          I am a Computer Engineering graduate with practical experience in enterprise
+          IT infrastructure — daily IT operations, Active Directory workflows, Microsoft
+          365 administration, endpoint preparation, and domain operations. I combine this
+          with backend development, automation, and reporting. New to the field, but
+          already active on the ground.
         </p>
       </div>
 
