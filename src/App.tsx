@@ -6,7 +6,6 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import Lab from "./pages/Lab";
-import CalendarDemo from "./pages/CalendarDemo";
 import NotFound from "./pages/NotFound";
 import { pageTransition } from "./lib/motion";
 
@@ -31,7 +30,6 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
         <Route path="/lab" element={<PageWrapper><Lab /></PageWrapper>} />
-        <Route path="/lab/calendar" element={<PageWrapper><CalendarDemo /></PageWrapper>} />
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>
     </AnimatePresence>

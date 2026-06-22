@@ -8,27 +8,19 @@ export type LabItem = {
 
 export const labItems: LabItem[] = [
   {
-    title: "Calendar Demo",
+    title: "Daily Desk",
     description:
-      "A reservation-oriented calendar experiment designed for table-based booking workflows and timeline views.",
+      "A lightweight productivity app for managing work and personal tasks in a focused daily workflow. It separates Today and Backlog, keeps priorities visible, tracks unfinished tasks, and turns completion history into a simple visual heatmap.",
     status: "In Progress",
     path: "#",
-    tags: ["React", "Calendar", "Reservations", "UI Experiment"],
+    tags: ["React", "Vite", "Productivity", "Local Storage", "UI Experiment"],
   },
   {
-    title: "Driver Scoring Demo",
+    title: "AI Text Tool",
     description:
-      "A future demo area for GPS-based trip analysis, driver grading logic, and anomaly-oriented scoring ideas.",
-    status: "Planned",
+      "A system-wide desktop tool that processes selected text through a local LLM via global keyboard shortcuts. Select text in any app, press a shortcut, and it translates, fixes grammar, formalizes tone, or summarizes in place. Runs locally-first with Ollama, lives in the system tray, and is fully config-driven so new actions can be added without touching code.",
+    status: "In Progress",
     path: "#",
-    tags: ["Analytics", "GPS", "Python", "PostgreSQL"],
-  },
-  {
-    title: "IT Tools",
-    description:
-      "Small utilities and notes for enterprise IT workflows, troubleshooting, and infrastructure operations.",
-    status: "Planned",
-    path: "#",
-    tags: ["Microsoft 365", "Active Directory", "Endpoint", "Tools"],
+    tags: ["Python", "Ollama", "Local LLM", "System Tray", "Automation"],
   },
 ];
