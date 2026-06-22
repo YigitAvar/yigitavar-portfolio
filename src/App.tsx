@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import type { ReactNode } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
@@ -41,6 +42,7 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <BrowserRouter>
+        <ScrollToTop />
         <div className="app">
           <Navbar />
 
