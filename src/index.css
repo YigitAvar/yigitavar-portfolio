@@ -1369,6 +1369,15 @@ button {
   color: var(--muted);
 }
 
+.lab-link--github {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.lab-link--github:hover {
+  transform: translateY(-2px);
+  color: #fff;
+}
+
 .demo-placeholder {
   min-height: 360px;
   padding: 36px;

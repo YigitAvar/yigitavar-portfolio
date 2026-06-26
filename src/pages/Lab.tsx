@@ -48,7 +48,7 @@ function Lab() {
 
               {item.github && (
                 <a
-                  className="lab-link"
+                  className="lab-link lab-link--github"
                   href={item.github}
                   target="_blank"
                   rel="noopener noreferrer"
