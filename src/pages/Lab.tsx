@@ -1,4 +1,5 @@
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SectionTitle from "../components/ui/SectionTitle";
 import { labItems } from "../data/labItems";
@@ -50,8 +51,8 @@ function Lab() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink size={16} />
-                  View on GitHub
+                  <FaGithub size={16} />
+                  GitHub
                 </a>
               )}
             </div>
