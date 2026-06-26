@@ -39,9 +39,11 @@ function Lab() {
                   <ArrowRight size={16} />
                 </Link>
               ) : (
-                <span className="lab-link disabled">
-                  {item.status === "In Progress" ? "In development" : "Coming soon"}
-                </span>
+                !item.github && (
+                  <span className="lab-link disabled">
+                    {item.status === "In Progress" ? "In development" : "Coming soon"}
+                  </span>
+                )
               )}
 
               {item.github && (
