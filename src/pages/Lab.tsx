@@ -1,4 +1,4 @@
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionTitle from "../components/ui/SectionTitle";
 import { labItems } from "../data/labItems";
@@ -50,7 +50,7 @@ function Lab() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github size={16} />
+                  <ExternalLink size={16} />
                   View on GitHub
                 </a>
               )}
