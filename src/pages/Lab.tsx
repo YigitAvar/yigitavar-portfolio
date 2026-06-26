@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionTitle from "../components/ui/SectionTitle";
 import { labItems } from "../data/labItems";
@@ -31,16 +31,30 @@ function Lab() {
               ))}
             </div>
 
-            {item.path !== "#" ? (
-              <Link className="lab-link" to={item.path}>
-                Open demo
-                <ArrowRight size={16} />
-              </Link>
-            ) : (
-              <span className="lab-link disabled">
-                {item.status === "In Progress" ? "In development" : "Coming soon"}
-              </span>
-            )}
+            <div className="lab-card-actions">
+              {item.path !== "#" ? (
+                <Link className="lab-link" to={item.path}>
+                  Open demo
+                  <ArrowRight size={16} />
+                </Link>
+              ) : (
+                <span className="lab-link disabled">
+                  {item.status === "In Progress" ? "In development" : "Coming soon"}
+                </span>
+              )}
+
+              {item.github && (
+                <a
+                  className="lab-link"
+                  href={item.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github size={16} />
+                  View on GitHub
+                </a>
+              )}
+            </div>
           </article>
         ))}
       </div>

@@ -1346,10 +1346,17 @@ button {
   font-weight: 600;
 }
 
-.lab-link {
-  width: fit-content;
+.lab-card-actions {
   margin-top: auto;
   padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.lab-link {
+  width: fit-content;
   display: inline-flex;
   align-items: center;
   gap: 8px;

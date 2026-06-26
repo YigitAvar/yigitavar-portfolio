@@ -3,6 +3,7 @@ export type LabItem = {
   description: string;
   status: "Live" | "In Progress" | "Planned";
   path: string;
+  github?: string;
   tags: string[];
 };
 
@@ -21,6 +22,7 @@ export const labItems: LabItem[] = [
       "A system-wide desktop tool that processes selected text through a local LLM via global keyboard shortcuts. Select text in any app, press a shortcut, and it translates, fixes grammar, formalizes tone, or summarizes in place. Runs locally-first with Ollama, lives in the system tray, and is fully config-driven so new actions can be added without touching code.",
     status: "In Progress",
     path: "#",
+    github: "https://github.com/YigitAvar/ai-text-tool",
     tags: ["Python", "Ollama", "Local LLM", "System Tray", "Automation"],
   },
 ];
